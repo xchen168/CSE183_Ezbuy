@@ -1,0 +1,20 @@
+[[extend 'layout.html']]
+
+<h2 class="subtitle is-1"> your order </h2>
+
+<table class="table">
+    <tr>
+        <th>email</th>
+        <th>card</th>
+        <th>product</th>
+        <th>buyer</th>
+    </tr>
+    [[for o in orders:]]
+    <tr>
+        <td>[[=o.email]]</td>
+        <td>[[=o.card]]</td>
+        <td>[[=o.product_id]]&nbsp&nbsp<a href="[[=URL('product', o.product_id)]]">detail</a></td>
+        <td>[[=o.buyer]]</td>
+    </tr>
+  [[pass]]
+</table>

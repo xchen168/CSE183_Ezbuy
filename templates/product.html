@@ -1,0 +1,12 @@
+[[extend 'layout.html']]
+
+
+<div class="column">
+      <figure class="image is-four-fifths">
+        <img class="image is-128x128" src="product_image/[[=p.image]]">
+      <span>[[=p.unit]] [[=p.price]]</span>
+      <a href="[[=URL('product', p.id)]]"><h2>[[=p.name]]</h2></a>
+      </figure>
+</div>
+
+<a class="button" href="[[=URL('buy', p.id)]]">buy</a>

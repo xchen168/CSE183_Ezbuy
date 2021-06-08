@@ -1,0 +1,25 @@
+[[extend 'layout.html']]
+
+<h2 class="subtitle is-1"> Products you added </h2>
+
+<table class="table">
+    <tr>
+        <th>name</th>
+        <th>image</th>
+        <th>price</th>
+        <th>quantity</th>
+        <th>created_by</th>
+        <th>edit</th>
+
+    </tr>
+    [[for p in products:]]
+    <tr>
+        <td>[[=p.name]]</td>
+        <td><img class="image" style="width: 50px;height: 50px" src="product_image/[[=p.image]]"></td>
+        <td>[[=p.unit]] [[=p.price]]</td>
+        <td>[[=p.quantity]]</td>
+        <td>[[=p.created_by]]</td>
+        <td><a class="button" href="[[=URL('editProduct', p.id)]]">Edit</td>
+    </tr>
+  [[pass]]
+</table>

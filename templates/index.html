@@ -1,0 +1,20 @@
+[[extend 'layout.html']]
+
+<form method="get" action="[[=URL('search')]]">
+<div class="columns">
+<input class="input" type="text" name="key" placeholder="search product">
+<button class="button" type="submit" >search</button>
+</div>
+</form>
+    <div class="section">
+    [[for p in products:]]
+      <div class="column is-four-fifths" >
+          <figure class="image">
+            <img class="image is-128x128" src="product_image/[[=p.image]]">
+          <span>[[=p.unit]] [[=p.price]]</span>
+          <a href="[[=URL('product', p.id)]]"><h2>[[=p.name]]</h2></a>
+          </figure>
+    </div>
+    [[pass]]
+
+</div>

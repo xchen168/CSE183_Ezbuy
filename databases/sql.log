@@ -1,0 +1,142 @@
+timestamp: 2021-05-25T22:59:29.202219
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "username" CHAR(512) UNIQUE,
+    "email" CHAR(512) UNIQUE,
+    "password" CHAR(512),
+    "first_name" CHAR(512),
+    "last_name" CHAR(512),
+    "sso_id" CHAR(512),
+    "action_token" CHAR(512),
+    "last_password_change" TIMESTAMP,
+    "past_passwords_hash" TEXT
+);
+success!
+timestamp: 2021-05-25T22:59:29.207179
+CREATE TABLE "auth_user_tag_groups"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "path" CHAR(512),
+    "record_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2021-06-01T21:28:14.509170
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "unit" CHAR(512),
+    "desc" CHAR(512),
+    "image" TEXT,
+    "add_user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+success!
+timestamp: 2021-06-02T00:08:03.570733
+ALTER TABLE "product" ADD "quantity" INTEGER;
+success!
+timestamp: 2021-06-02T00:11:40.450544
+ALTER TABLE "product" ADD "created_by" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2021-06-02T00:55:58.695766
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T01:35:53.420736
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "image_file" BLOB,
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T01:47:54.211308
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T01:50:26.395828
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T01:53:53.494004
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T01:57:00.950027
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T01:57:59.801688
+CREATE TABLE "product"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(100),
+    "price" DOUBLE,
+    "quantity" INTEGER,
+    "unit" CHAR(512),
+    "desc" TEXT,
+    "image" CHAR(512),
+    "created_by" CHAR(512)
+);
+success!
+timestamp: 2021-06-02T21:03:01.704269
+CREATE TABLE "order"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "email" CHAR(100),
+    "card" CHAR(100),
+    "password" CHAR(30),
+    "product_id" INTEGER REFERENCES "product" ("id") ON DELETE CASCADE  ,
+    "buyer" CHAR(512)
+);
+success!
